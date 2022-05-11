@@ -1,0 +1,41 @@
+
+<!-- Designing of thymeleaf template to display records of Employees -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+</head>
+<body>
+
+<div align="center">
+	<h1>Employees List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Employee First Name</th>
+				<th>Employee Last Name</th>
+				<th>Employee Email</th>
+				<th>Employee Phone Number</th>
+				<th>Employee Phone Number 2</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- Iterating over Employee list using Thymeleaf th:each attribute -->
+			<tr th:each="employee : ${listEmployees}">
+					<td th:text="${employee.firstName}"></td>
+					<td th:text="${employee.lastName}"></td>
+					<td th:text="${employee.email}"></td>
+					<td th:text="${employee.mobileNumber}"></td>
+					<td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">Update</a>
+					    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>	
+		</tbody>
+	</table>
+	
+</div>
+
+</body>
+</html>
