@@ -6,32 +6,76 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Employee Management System</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-<div align="center">
-	<h1>Employees List</h1>
-	<table border="1">
-		<thead>
-			<tr>
-				<th>Employee First Name</th>
-				<th>Employee Last Name</th>
-				<th>Employee Email</th>
-				<th>Mobile Number</th>
-			</tr>
-		</thead>
-		<tbody>
-		<!-- Iterating over Employee list using Thymeleaf th:each attribute -->
-			<tr th:each="employee : ${listEmployees}">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary mt-4">
+		<div align="center" class="container">
+			<h2 style="color: white;">
+				<b style="font-family: italic;">Employee Management System</b>
+			</h2>
+		</div>
+	</nav>
+
+
+	<div style="background: #3f51b5;" align="center"
+		class="container my-4 mt-4">
+		<h1 style="color: white;">Employees list are:</h1>
+	</div>
+	<div align="center" class="container my-2 mt-4">
+
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Employee First Name</th>
+					<th>Employee Last Name</th>
+					<th>Employee Email</th>
+					<th>Mobile Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- Iterating over Employee list using Thymeleaf th:each attribute -->
+				<tr th:each="employee : ${listEmployees}">
 					<td th:text="${employee.firstName}"></td>
 					<td th:text="${employee.lastName}"></td>
 					<td th:text="${employee.email}"></td>
 					<td th:text="${employee.mobileNumber}"></td>
-				</tr>	
-		</tbody>
-	</table>
-	
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+
+<div class="card text-center">
+	<div class="card-header"><h5 style="font-family: italic;"><b>Featured By Suraj Singh</b></h5></div>
+	<div class="card-body" style="background: #9e9e9e;">
+		<h4 class="card-title"> <b>&copy 2022 Copyright:</b></h4>
+		<a href="https://www.linkedin.com/in/suraj-singh-28446269/" style="color: white;"> <b>Suraj-Singh@Info.com</b></a>
+	</div>
+
 </div>
 
-</body>
 </html>
