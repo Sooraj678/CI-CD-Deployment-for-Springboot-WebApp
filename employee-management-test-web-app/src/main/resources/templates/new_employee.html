@@ -1,12 +1,8 @@
-
-<!-- Designing of thymeleaf template to display records of Employees -->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Management System</title>
-
+<title>Add Employee Page</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -37,43 +33,38 @@
 		</h2>
 	</div>
 </nav>
+</head>
 
 <body>
-	<div class="container mt-4" align="center">
-		<!-- GENERATING FORM TO ADD NEW EMPLOYEE -->
-		<a th:href="@{/showNewEmployeeForm}"
-			class="btn btn-primary btn-sm mb-3"> <b>Add New Employee Data</b></a>
-	</div>
-	<div class="container my-2 mt-4" style="background: #7c4dff;">
-		<h3 style="color: white;">Employees List View:</h3>
-	</div>
+	<div align="center" class="container">
+		<h1 style="font-family: italic;"><b>Employee Management System</b></h1>
+		<hr>
+		<h2 style="font-family: italic;"><b>Saving Employee Data</b></h2>
 
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="POST">
+			<input type="text" th:field="*{firstName}"
+				placeholder="Please Enter Employee First Name..!!" class="form-control mb-4 col-4">
 
-	<div align="center" class="container my-2 mt-4">
+			<input type="text" th:field="*{lastName}"
+				placeholder="Please Enter Employee Last Name..!!" class="form-control mb-4 col-4">
 
-		<table border="1" class="table table-striped table-responsive-md">
-			<thead>
-				<tr>
-					<th>Employee First Name</th>
-					<th>Employee Last Name</th>
-					<th>Employee Email</th>
-					<th>Mobile Number</th>
-				</tr>
-			</thead>
-			<tbody>
-				<!-- Iterating over Employee list using Thymeleaf th:each attribute -->
-				<tr th:each="employee : ${listEmployees}">
-					<td th:text="${employee.firstName}"></td>
-					<td th:text="${employee.lastName}"></td>
-					<td th:text="${employee.email}"></td>
-					<td th:text="${employee.mobileNumber}"></td>
-				</tr>
-			</tbody>
-		</table>
+			<input type="text" th:field="*{email}" placeholder="Please Enter Employee Email..!!"
+				class="form-control mb-4 col-4">
+			
+			<input type="number" th:field="*{mobileNumber}" placeholder="Please Enter Employee Mobile Number..!!"
+				class="form-control mb-4 col-4">
+
+			<div class="container mb-3">
+			<button type="submit" class="btn btn-info col-2">Save
+				Employee Data</button>
+			<a th:href="@{/}" class="btn btn-primary col-2 "> <b>Back to Employee List</b></a>
+			</div>
+		</form>
 
 	</div>
+
 </body>
-
 
 <div class="card text-center">
 	<div class="card-header">
@@ -90,5 +81,4 @@
 	</div>
 
 </div>
-
 </html>
