@@ -22,4 +22,10 @@ public class EmployeeServiceImplementation implements EmployeeService{
 		
 	}
 
+	@Override
+	public void saveEmployee(Employee employee) {
+		this.employeeRepository.save(employee);
+		
+	}
+
 }
