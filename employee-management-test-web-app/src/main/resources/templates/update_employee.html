@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update-Page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<div align="center" class="container">
+		<h2 style="color: white;">
+			<b style="font-family: italic;">Employee Management System</b>
+		</h2>
+	</div>
+</nav>
+
+
+
+<body>
+<div align="center" class="container">
+		<h1 style="font-family: italic;"><b>Employee Management System</b></h1>
+		<hr>
+		<h2 style="font-family: italic;"><b>Updating Employee Data</b></h2>
+
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="POST">
+			
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			
+			<input type="text" th:field="*{firstName}"
+				class="form-control mb-4 col-4">
+
+			<input type="text" th:field="*{lastName}"
+				class="form-control mb-4 col-4">
+
+			<input type="text" th:field="*{email}"
+				class="form-control mb-4 col-4">
+			
+			<input type="number" th:field="*{mobileNumber}"
+				class="form-control mb-4 col-4">
+
+			<div class="container mb-3">
+			<button type="submit" class="btn btn-outline-success col-3">
+			<b>Update Employee Data</b></button>
+			<a th:href="@{/}" class="btn btn-outline-info col-3"> <b>Back to Employee List</b></a>
+			</div>
+		</form>
+
+	</div>
+
+</body>
+
+
+<div class="card text-center">
+	<div class="card-header">
+		<h5 style="font-family: italic;">
+			<b>Featured By Suraj Singh</b>
+		</h5>
+	</div>
+	<div class="card-body" style="background: #9e9e9e;">
+		<h4 class="card-title">
+			<b>&copy 2022 Copyright:</b>
+		</h4>
+		<a href="https://www.linkedin.com/in/suraj-singh-28446269/"
+			style="color: white;"> <b>Suraj-Singh@Info.com</b></a>
+	</div>
+
+</div>
+</html>
