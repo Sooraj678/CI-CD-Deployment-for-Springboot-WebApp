@@ -2,6 +2,8 @@ package com.test.employee.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import com.test.employee.model.Employee;
 
 public interface EmployeeService {
@@ -13,5 +15,4 @@ public interface EmployeeService {
 	
 	//For Deleting Employee's Records
 	void deleteEmployeeById(long id);
-
 }
